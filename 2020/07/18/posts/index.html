@@ -492,12 +492,16 @@
 <p>另外author也可以改成你自己的名字或昵称，语言那里我改成了简体中文，这个可以去Hexo的官网去查看。</p>
 <p>在url这个地方修改成你博客的网址，是我上面忘记提到的。</p>
 <h4 id="2-修改主题"><a href="#2-修改主题" class="headerlink" title="2.修改主题"></a>2.修改主题</h4><pre><code>默认主题我觉得不是很好看，你要是觉得还行就不用改了。
-我这个博客用的主题是Matery,个人觉得比较不错。另外推荐Butterfly也是很好看的。不过还有很多的主题你可以在Hexo官网去找，也可以百度问一下有哪些好看的主题。不多说了，先说一下改主题的方法，在Git Bush Here里面输入下面命令</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure>
-<p>后面那个是把这个安装在themes/butterfly文件里面<br>之后又要去_config.yml里面去修改相关设置，在里面找到theme<br><img src="/2020/07/18/posts/21.jpg" alt><br>把landspace改成butterfly就行<br>之后输入下面命令清理一下</p>
+我这个博客用的主题是Matery,个人觉得比较不错。另外推荐Butterfly也是很好看的。不过还有很多的主题你可以在Hexo官网去找，也可以百度问一下有哪些好看的主题。不多说了，先说一下改主题的方法，这里采用butterfly主题，你可以直接去[butterfly](https://demo.jerryc.me/posts/21cfbf15/#%E5%AE%89%E8%A3%9D)这里查看，在Git Bush Here里面输入下面命令</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure>
+<p>后面那个是把这个安装在themes/butterfly文件里面<br>之后又要去_config.yml里面去修改相关设置，在里面找到theme<br><img src="/2020/07/18/posts/21.jpg" alt><br>把landspace改成butterfly就行，<br>，另外这个主题还要下载一个插件，输入下面命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install hexo-renderer-pug hexo-renderer-stylus --save</span><br></pre></td></tr></table></figure>
+<p>之后输入下面命令清理一下</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
 <p>然后再生成一下</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-<p>然后部署到远端上去</p>
+<p>之后在本地预览一下（以后写博客的时候也可以这样）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>没问题然后就部署到远端上去</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 <p>最后再去你博客的网址去看一下，修改成功就是完成了</p>
 <h3 id="6-后记"><a href="#6-后记" class="headerlink" title="6.后记"></a>6.后记</h3><p>创建自己的博客我就说这么多，毕竟还有很多很多的相关知识，一下子讲不完，例如关于怎么写博客、怎么再创立一个博文、怎么修改别人主题里的相关设置等等，想要学的更多需要百度自己去寻找，也可以在<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a>的官网去学习相关的知识，写这个博文的原因是因为第一篇也不知到要写什么，想了想就把自己创建博客的经历写下来作为我博客的起始文章，想要属于自己的博客来记录自己想记录的一些东西，就这样吧，也希望你们也有所收获。</p>
