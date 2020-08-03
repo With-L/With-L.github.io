@@ -471,13 +471,15 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
 <p>会出现下面的内容<br><img src="/2020/07/18/posts/11.jpg" alt><br>然后Hexo is running at <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> . Press Ctrl+C to stop这句话就说了，你可以在本地的4000端口查看已经启动的博客，之后用Ctrl+C来停止运行。</p>
 <h3 id="4-把博客部署到Github上公开使用"><a href="#4-把博客部署到Github上公开使用" class="headerlink" title="4.把博客部署到Github上公开使用"></a>4.把博客部署到Github上公开使用</h3><p>博客创建完成之后，当然不能只是自己在本地使用，所以就要部署到远端去，这里我使用的是Github，当然也可以用其他的，例如码云等等。</p>
-<p>首先就是在Github创建一个账号，这个不用说明吧！之后就是在your profile里面创建一个新的仓库，在这里仓库命名要注意符合特定要求才行，也就是你的昵称加上github.io，例如：With-L.github.io。之后选择Public，然后点击创建即可。<br><img src="/2020/07/18/posts/13.jpg" alt><br>之后要去，创建好的博客文件里面找到_config.yml文件，修改里面的设置，这里你可以用最原始的记事本打开，也可以用其他的可读取此类文件的软件打开，这里我用的是Sublime Text 3这个软件打开。<br><img src="/2020/07/18/posts/12.jpg" alt><br>之后就开始修改相应的设置</p>
-<p>1.在deploy下面有个type，在这个设置后面添加给git，如果type后面有单引号，需要删除单引号，再添加git，注意空格也不要删除了。</p>
-<p>2.在type的下添加一个设置，即repo:地址。(冒号后面写上你仓库的地址)<br>如图所示，打开你新创建的仓库，点击绿色的Code即可出现下面样式，地址最右边的按钮可以一键复制。<br><img src="/2020/07/18/posts/14.jpg" alt><br>然后把地址复制到冒号的后面，注意冒号后面要添加一个空格。</p>
-<p>3.在repo的下面，添加一个branch: master这样的设置，直接复制我的即可，然后记得保存。</p>
+<p>首先就是在Github创建一个账号，这个不用说明吧！之后就是在your profile里面创建一个新的仓库，在这里仓库命名要注意符合特定要求才行，也就是你的昵称加上.github.io，例如：With-L.github.io。之后选择Public(这里应该是默认的)，然后点击创建即可。<br><img src="/2020/07/18/posts/13.jpg" alt><br>之后要去，创建好的博客文件里面找到_config.yml文件，修改里面的设置，这里你可以用最原始的记事本打开，也可以用其他的可读取此类文件的软件打开，这里我用的是Sublime Text 3这个软件打开。<br><img src="/2020/07/18/posts/12.jpg" alt></p>
+<h4 id="修改相应的设置"><a href="#修改相应的设置" class="headerlink" title="修改相应的设置"></a>修改相应的设置</h4><h5 id="1-修改type"><a href="#1-修改type" class="headerlink" title="1.修改type"></a>1.修改type</h5><p>在deploy下面有个type，在这个设置后面添加给git，如果type后面有单引号，需要删除单引号，再添加git，注意空格也不要删除了。</p>
+<h5 id="2-增加repo"><a href="#2-增加repo" class="headerlink" title="2.增加repo"></a>2.增加repo</h5><p>在type的下添加一个设置，即repo:地址。(冒号后面写上你仓库的地址)<br>如图所示，打开你新创建的仓库，点击绿色的Code即可出现下面样式，地址最右边的按钮可以一键复制。<br><img src="/2020/07/18/posts/14.jpg" alt><br>或者下面这样的最右边也可以直接复制。<br><img src="/2020/07/18/posts/18.jpg" alt><br>然后把地址复制到冒号的后面，注意冒号后面要添加一个空格。</p>
+<h5 id="3-增加branch"><a href="#3-增加branch" class="headerlink" title="3.增加branch"></a>3.增加branch</h5><p>在repo的下面，添加一个branch: master这样的设置，直接复制我的即可，然后记得保存。</p>
 <p>之后我们要下载一个插件，在打开的Git Bush Here里面输入下面命令下载</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
-<p>下载完之后再输入下面命令部署到远端</p>
+<p>下载完之后再输入下面命令先生成博客</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+<p>之后再输入下面命令部署到远端</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 <p>部署的时候会弹出下面的窗口需要你输入你GitHub的用户名和密码。<br><img src="/2020/07/18/posts/15.jpg" alt><br>有的时候用在命令行界面操作会出现错误，大部分错误是需要设置你GitHub的用户名和邮箱，你需要自己设置，所以你需要输入下面的命令</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name “你的用户名”</span><br><span class="line">git config --global user.email “你的邮箱”</span><br></pre></td></tr></table></figure>
@@ -485,7 +487,22 @@
 <p>之后还有个重要的东西要设置，就是ssh密钥。<br>点击右上角的头像，点击设置，点解SSH and GPG keys，点击右上角的添加，里面的标题可以随便编写。<br>在打开的Git Bush Here里面输入下面命令</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"你的邮箱"</span></span><br></pre></td></tr></table></figure>
 <p>之后连续的回车直至结束，应该要回车两次。然后在下面地址会出现.ssh文件<br><img src="/2020/07/18/posts/17.jpg" alt><br>打开，点击id_ras.pub文件，以记事本的形式打开复制里面的所有东西到GitHub刚刚新建的ssh密钥的哪个里面，然后点击创建（如果没看到，就搜索一下）。</p>
-<p>这时候在你仓库的网址下面，取出后面的网址，如图所示区域，然后在浏览器里访问。<br><img src="/2020/07/18/posts/16.jpg" alt></p>
+<p>这时候在你仓库的网址下面，取出后面的网址，如图所示区域，然后在浏览器里访问。<br><img src="/2020/07/18/posts/16.jpg" alt><br>然后就可以看到一个默认主题的博客了。如果，没显示就再刷新一下，或者手动在前面加上https://。第一次有的需要这样，之后就不需要了。</p>
+<h3 id="5-个性化修改"><a href="#5-个性化修改" class="headerlink" title="5.个性化修改"></a>5.个性化修改</h3><h4 id="1-修改标题名称"><a href="#1-修改标题名称" class="headerlink" title="1.修改标题名称"></a>1.修改标题名称</h4><p>新建立的博客的标题应该都是Hexo吧<br><img src="/2020/07/18/posts/20.jpg" alt><br>修改这两个，需要在_config.yml里面去修改<br><img src="/2020/07/18/posts/19.jpg" alt><br>一个是title，一个是subtitle。这两个的区别是：一个是最上面的红框里面的，一个是下面那估红框里面的，你可以自己分别修改成自己想要的。</p>
+<p>另外author也可以改成你自己的名字或昵称，语言那里我改成了简体中文，这个可以去Hexo的官网去查看。</p>
+<p>在url这个地方修改成你博客的网址，是我上面忘记提到的。</p>
+<h4 id="2-修改主题"><a href="#2-修改主题" class="headerlink" title="2.修改主题"></a>2.修改主题</h4><pre><code>默认主题我觉得不是很好看，你要是觉得还行就不用改了。
+我这个博客用的主题是Matery,个人觉得比较不错。另外推荐Butterfly也是很好看的。不过还有很多的主题你可以在Hexo官网去找，也可以百度问一下有哪些好看的主题。不多说了，先说一下改主题的方法，在Git Bush Here里面输入下面命令</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure>
+<p>后面那个是把这个安装在themes/butterfly文件里面<br>之后又要去_config.yml里面去修改相关设置，在里面找到theme<br><img src="/2020/07/18/posts/21.jpg" alt><br>把landspace改成butterfly就行<br>之后输入下面命令清理一下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+<p>然后再生成一下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+<p>然后部署到远端上去</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>最后再去你博客的网址去看一下，修改成功就是完成了</p>
+<h3 id="6-后记"><a href="#6-后记" class="headerlink" title="6.后记"></a>6.后记</h3><p>创建自己的博客我就说这么多，毕竟还有很多很多的相关知识，一下子讲不完，例如关于怎么写博客、怎么再创立一个博文、怎么修改别人主题里的相关设置等等，想要学的更多需要百度自己去寻找，也可以在<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a>的官网去学习相关的知识，写这个博文的原因是因为第一篇也不知到要写什么，想了想就把自己创建博客的经历写下来作为我博客的起始文章，想要属于自己的博客来记录自己想记录的一些东西，就这样吧，也希望你们也有所收获。</p>
+<p>人生就是不断学习的过程！</p>
+<p>(如果我写的部分有问题可以联系我！这也是一种学习！)</p>
 
             </div>
             <hr/>
